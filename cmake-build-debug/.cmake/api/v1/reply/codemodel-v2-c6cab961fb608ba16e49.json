@@ -6,6 +6,7 @@
 			[
 				{
 					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -38,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TCP_PROXY::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TCP_PROXY-Debug-c9231600d29be657c5dc.json",
+					"jsonFile" : "target-TCP_PROXY-Debug-3835e3a7a353013c0c8a.json",
 					"name" : "TCP_PROXY",
 					"projectIndex" : 0
 				}
@@ -54,6 +55,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 2
+		"minor" : 3
 	}
 }

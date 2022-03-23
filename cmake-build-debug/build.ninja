@@ -80,6 +80,14 @@ build CMakeFiles/TCP_PROXY.dir/main.cpp.o: CXX_COMPILER__TCP_PROXY_Debug /Users/
   OBJECT_DIR = CMakeFiles/TCP_PROXY.dir
   OBJECT_FILE_DIR = CMakeFiles/TCP_PROXY.dir
 
+build CMakeFiles/TCP_PROXY.dir/SimpleClient.cpp.o: CXX_COMPILER__TCP_PROXY_Debug /Users/jberegon/Desktop/TCP_PROXY/SimpleClient.cpp || cmake_object_order_depends_target_TCP_PROXY
+  DEFINES = -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB
+  DEP_FILE = CMakeFiles/TCP_PROXY.dir/SimpleClient.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14 -std=gnu++14
+  INCLUDES = -isystem /Users/jberegon/.brew/Cellar/boost/1.78.0_1/include
+  OBJECT_DIR = CMakeFiles/TCP_PROXY.dir
+  OBJECT_FILE_DIR = CMakeFiles/TCP_PROXY.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TCP_PROXY
@@ -88,7 +96,7 @@ build CMakeFiles/TCP_PROXY.dir/main.cpp.o: CXX_COMPILER__TCP_PROXY_Debug /Users/
 #############################################
 # Link the executable TCP_PROXY
 
-build TCP_PROXY: CXX_EXECUTABLE_LINKER__TCP_PROXY_Debug CMakeFiles/TCP_PROXY.dir/main.cpp.o | /Users/jberegon/.brew/Cellar/boost/1.78.0_1/lib/libboost_regex-mt.dylib
+build TCP_PROXY: CXX_EXECUTABLE_LINKER__TCP_PROXY_Debug CMakeFiles/TCP_PROXY.dir/main.cpp.o CMakeFiles/TCP_PROXY.dir/SimpleClient.cpp.o | /Users/jberegon/.brew/Cellar/boost/1.78.0_1/lib/libboost_regex-mt.dylib
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14
   LINK_LIBRARIES = /Users/jberegon/.brew/Cellar/boost/1.78.0_1/lib/libboost_regex-mt.dylib
   OBJECT_DIR = CMakeFiles/TCP_PROXY.dir
