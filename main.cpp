@@ -4,7 +4,6 @@
 #include <boost/asio.hpp>
 #include <boost/asio/ts/buffer.hpp>
 #include <boost/asio/ts/internet.hpp>
-#include <boost/asio/error.hpp>
 
 #include <boost/system/error_code.hpp>
 

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="TCP_PROXY"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\.brew\;CMake Files\..\..\.brew\Cellar\;CMake Files\..\..\.brew\Cellar\boost\;CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\;CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\;CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\;CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\Boost-1.78.0\;CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_headers-1.78.0\;CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TCP_PROXY">
+				<Option output="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/TCP_PROXY" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_REGEX_NO_LIB"/>
+					<Add option="-DBOOST_REGEX_DYN_LINK"/>
+					<Add directory="/Users/jberegon/.brew/Cellar/boost/1.78.0_1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 TCP_PROXY"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TCP_PROXY/fast">
+				<Option output="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/TCP_PROXY" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_REGEX_NO_LIB"/>
+					<Add option="-DBOOST_REGEX_DYN_LINK"/>
+					<Add directory="/Users/jberegon/.brew/Cellar/boost/1.78.0_1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 TCP_PROXY/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/jberegon/Desktop/TCP_PROXY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/tcpproxy_server.cpp">
+			<Option target="TCP_PROXY"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/BoostDetectToolset-1.78.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/Boost-1.78.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\Boost-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/Boost-1.78.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\Boost-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_headers-1.78.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_headers-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_headers-1.78.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_headers-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_regex-1.78.0/boost_regex-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_regex-1.78.0/boost_regex-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_regex-1.78.0/libboost_regex-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_regex-1.78.0/libboost_regex-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_regex-1.78.0/libboost_regex-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\"/>
+		</Unit>
+		<Unit filename="/Users/jberegon/Desktop/TCP_PROXY/../../.brew/Cellar/boost/1.78.0_1/lib/cmake/boost_regex-1.78.0/libboost_regex-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\.brew\Cellar\boost\1.78.0_1\lib\cmake\boost_regex-1.78.0\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
