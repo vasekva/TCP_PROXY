@@ -39,19 +39,146 @@ namespace olc
 						if (m_socket.is_open())
 						{
 							id = uid;
+							ReadHeader();
 						}
 					}
 				}
 
-				bool ConnectToServer(const boost::asio::ip::tcp::resolver::results_type &endpoints);
-				bool Disconnect();
+				void ConnectToServer(const boost::asio::ip::tcp::resolver::results_type &endpoints);
+				void Disconnect()
+				{
+					if (IsConnected())
+						boost::asio::post(m_asioContext, [this]() { m_socket.close(); });
+				}
 				bool IsConnected() const
 				{
 					return (m_socket.is_open());
 				}
 
 			public:
-				bool  Send(const message<T>& msg);
+				void  Send(const message<T> &msg)
+				{
+					boost::asio::post(m_asioContext,
+						[this, msg]()
+						{
+							bool bWritingMessage = !m_qMessagesOut.empty();
+							m_qMessagesOut.push_back(msg);
+							if (!bWritingMessage)
+							{
+								WriteHeader();
+							}
+						});
+				}
+
+			private:
+				// ASYNC - Prime context ready to read a message header
+				void ReadHeader()
+				{
+					boost::asio::async_read(m_socket, boost::asio::buffer(&m_msgTemporaryIn.header, sizeof(message_header<T>)),
+						[this](std::error_code ec, std::size_t length)
+						{
+							if (!ec)
+							{
+								if (m_msgTemporaryIn.header.size > 0)
+								{
+									m_msgTemporaryIn.body.resize(m_msgTemporaryIn.header.size);
+									ReadBody();
+								}
+								else
+								{
+									AddToIncomingMessageQueue();
+								}
+							}
+							else
+							{
+								std::cout << "[" << id << "] Read Header Fail.\n";
+								m_socket.close();
+							}
+						});
+				}
+
+				// ASYNC - Prime context ready to read a message body
+				void ReadBody()
+				{
+					boost::asio::async_read(m_socket, boost::asio::buffer(m_msgTemporaryIn.body.data(), m_msgTemporaryIn.body.size()),
+						[this](std::error_code ec, std::size_t length)
+						{
+							if (!ec)
+							{
+								AddToIncomingMessageQueue();
+							}
+							else
+							{
+								// As above!
+								std::cout << "[" << id << "] Read body Fail.\n";
+								m_socket.close();
+							}
+						});
+				}
+
+				// ASYNC - Prime context to write a message header
+				void WriteHeader()
+				{
+					boost::asio::async_write(m_socket, boost::asio::buffer(&m_qMessagesOut.front().header, sizeof(message_header<T>)),
+						[this](std::error_code ec, std::size_t length)
+						{
+							if (!ec)
+							{
+								if (m_qMessagesOut.front().body.size() > 0)
+								{
+									WriteBody();
+								}
+								else
+								{
+									m_qMessagesOut.pop_front();
+
+									if (!m_qMessagesOut.empty())
+									{
+										WriteHeader();
+									}
+								}
+							}
+							else
+							{
+								std::cout << "[" << id << "] Write Header Fail.\n";
+								m_socket.close();
+							}
+						});
+
+				}
+
+				// ASYNC - Prime context to write a message body
+				void WriteBody()
+				{
+					boost::asio::async_write(m_socket, boost::asio::buffer(m_qMessagesOut.front().body.data(), m_msgTemporaryIn.body.size()),
+						[this](std::error_code ec, std::size_t length)
+						{
+							if (!ec)
+							{
+								m_qMessagesOut.pop_front();
+
+								if (!m_qMessagesOut.empty())
+								{
+									WriteHeader();
+								}
+							}
+							else
+							{
+								std::cout << "[" << id << "] Write Body Fail.\n";
+								m_socket.close();
+							}
+						});
+				}
+
+				void AddToIncomingMessageQueue()
+				{
+					if (m_nOwnerType == owner::server)
+						m_qMessagesIn.push_back({ this->shared_from_this(), m_msgTemporaryIn });
+					else
+						m_qMessagesIn.push_back({ nullptr, m_msgTemporaryIn });
+
+					ReadHeader();
+				}
 
 			protected:
 				// Each connection has a unique socket to a remote
@@ -68,6 +195,7 @@ namespace olc
 				// the remote side of this connection. Note it is a reference
 				// as the "owner" of this connection is expected to provide a queue
 				ocl::net::tsqueue<owned_message<T>> &m_qMessagesIn;
+				message<T> m_msgTemporaryIn;
 
 				// The "owner" decides how some of the connection behaves
 				owner m_nOwnerType = owner::server;
